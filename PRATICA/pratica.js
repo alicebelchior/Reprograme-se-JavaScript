@@ -8,7 +8,7 @@ var dep = parseInt(prompt("Digite o número de dependentes: "));
 //renda per capta = salario / pessoas numa casa (dependentes e a pessoa que trabalha)
 var renda = salBruto / (dep + 1);
 
-if (renda >= 500) {
+if (renda > 500) {
     if (salBruto > 0.00 && salBruto <= 1903,98) {
         var ir = 0.05 * salBruto;
     } else if (salBruto > 2826,65) {
