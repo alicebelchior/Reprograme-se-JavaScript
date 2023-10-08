@@ -9,6 +9,22 @@ for (var ppl = 1; ppl <= 5; ppl++) {// a enquanto q qnt de pessoas nao for 5, in
     var salBruto = parseFloat(prompt("Digite o valor do seu salário bruto: "));
     var dep = parseInt(prompt("Digite o número de dependentes: "));
 
+    //laço de repetição para os ganhos dos dependentes (FOR)
+    for (i = 1; i <= dep; i++) {
+        var ganho = parseFloat(prompt("Digite o seu ganho mensal: "));
+        var salBruto = salBruto + ganho;
+    }
+
+    //laço de repetição para os ganhos dos dependentes (WHILE)
+    /*
+    i = 1
+    while (i <= dep) {
+        var ganho = parseFloat(prompt("Digite o seu ganho mensal: "));
+        var salBruto = salBruto + ganho;
+        i++
+    }
+     */
+
     //renda per capta = salario / pessoas numa casa (dependentes e a pessoa que trabalha)
     var renda = salBruto / (dep + 1);
 
