@@ -12,4 +12,8 @@ O imposto de renda a ser descontado deve considerar as seguintes regras:
 * salario bruto a partir de R$2826,65 - 15%
 Ao final, mostre o valor do salário líquido.
 
-10 - Comando de Repetição Aninhados
+Armazene os salário líquidos em uma coleção indexada (Arrays).
+Depois calcule a média de todos os salários líquidos. Posteriormente, mostre a média dos salários e quantas pessoas
+estão abaixodesse valor médio.
+
+11 - Coleções (Arrays)

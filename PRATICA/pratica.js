@@ -1,6 +1,12 @@
 // definir uma constante que vai importar um módulo p/ entrada de dados
 const prompt = require("prompt-sync")();
 
+//indexação dos salarios liq medios
+var salLiqMedio = [];
+var sumSal = 0;
+var media;
+var pessoas = 0;
+
 //laço de repetição para 5 pessoas
 for (var ppl = 1; ppl <= 5; ppl++) {// a enquanto q qnt de pessoas nao for 5, iniciando em 1, ppl vai acrescer em 1
     console.log("Pessoa", ppl);
@@ -43,4 +49,19 @@ for (var ppl = 1; ppl <= 5; ppl++) {// a enquanto q qnt de pessoas nao for 5, in
     var salLiq = salBruto - ir;
 
     console.log("O salário líquido é R$", salLiq, "\n");
+
+    salLiqMedio.push(salLiq);
+    sumSal = sumSal + salLiq;
 }
+
+media = sumSal / 5;
+
+//verificação do vetor salario liquido medio que esta abaixo da media
+for (i = 0; i <= 4; i++) {
+    if (salLiqMedio[i] < media) {
+        pessoas++;
+    }
+}
+
+console.log("A média dos salários líquidos é R$", media)
+console.log("A quantidade de pessoas com salário líquido abaixo da média é", pessoas)
