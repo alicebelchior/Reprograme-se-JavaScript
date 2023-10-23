@@ -5,7 +5,7 @@ const prompt = require("prompt-sync")();
 var salLiqMedio = [];
 var sumSal = 0;
 var media;
-var pessoas = 0;
+var pessoas;
 
 //laço de repetição para 5 pessoas
 for (var ppl = 1; ppl <= 5; ppl++) {// a enquanto q qnt de pessoas nao for 5, iniciando em 1, ppl vai acrescer em 1
@@ -34,6 +34,25 @@ for (var ppl = 1; ppl <= 5; ppl++) {// a enquanto q qnt de pessoas nao for 5, in
     //renda per capta = salario / pessoas numa casa (dependentes e a pessoa que trabalha)
     var renda = salBruto / (dep + 1);
 
+    var ir = calcIR(salBruto, renda);
+    var salLiq = salBruto - ir;
+
+    console.log("O salário líquido é R$", salLiq, "\n");
+
+    salLiqMedio.push(salLiq);
+    sumSal = sumSal + salLiq;
+}
+
+media = sumSal / 5;
+
+//retornar a quantidade de salários líquidos menores do que a média
+pessoas = calcMenorSal(salLiqMedio, media)
+
+console.log("A média dos salários líquidos é R$", media)
+console.log("A quantidade de pessoas com salário líquido abaixo da média é", pessoas)
+
+//calculo do IMPOSTO DE RENDA
+function calcIR(salBruto, renda) {
     if (renda > 500) {
         if (salBruto > 0.00 && salBruto <= 1903.98) {
             var ir = 0.05 * salBruto;
@@ -45,23 +64,16 @@ for (var ppl = 1; ppl <= 5; ppl++) {// a enquanto q qnt de pessoas nao for 5, in
     } else {
         var ir = 0;
     }
-
-    var salLiq = salBruto - ir;
-
-    console.log("O salário líquido é R$", salLiq, "\n");
-
-    salLiqMedio.push(salLiq);
-    sumSal = sumSal + salLiq;
+    return ir;
 }
 
-media = sumSal / 5;
-
-//verificação do vetor salario liquido medio que esta abaixo da media
-for (i = 0; i <= 4; i++) {
-    if (salLiqMedio[i] < media) {
-        pessoas++;
+function calcMenorSal(salLiqMedio, media) {
+    var pessoas = 0;
+    //verificação do vetor salario liquido medio que esta abaixo da media
+    for (i = 0; i <= 4; i++) {
+        if (salLiqMedio[i] < media) {
+            pessoas++;
+        }
     }
+    return pessoas;
 }
-
-console.log("A média dos salários líquidos é R$", media)
-console.log("A quantidade de pessoas com salário líquido abaixo da média é", pessoas)

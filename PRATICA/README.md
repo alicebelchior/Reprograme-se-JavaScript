@@ -16,4 +16,10 @@ Armazene os salário líquidos em uma coleção indexada (Arrays).
 Depois calcule a média de todos os salários líquidos. Posteriormente, mostre a média dos salários e quantas pessoas
 estão abaixodesse valor médio.
 
-11 - Coleções (Arrays)
+Refatore seu código. Para isso, crie 2 funções, a saber:
+* função para calcular o IR: esta função deve receber como parâmetros o salário bruto e renda per capta e retornar, ao final
+, o valor do IR.
+* função para calcular a quantidade de salários líquidos menores do que a média: esta função deve receber como parâmetros
+o array de salários líquidos e a média dos salários líquidos, e retornar a quantidade de salários líquidos menores do que a média.
+
+12 - Funções
